@@ -56,3 +56,14 @@ jobs:
             .pio/build/esp32dev/merged-firmware.bin
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy merged-firmware.bin to root
+        run: cp .pio/build/esp32dev/merged-firmware.bin merged-firmware.bin
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          destination_dir: .
+          force_orphan: true

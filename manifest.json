@@ -3,7 +3,7 @@
   "builds": [{
     "chipFamily": "ESP32",
     "parts": [
-      { "path": "https://github.com/fivef/Servo-Driver-with-ESP32/releases/download/latest/merged-firmware.bin", "offset": 0 }
+      { "path": "merged-firmware.bin", "offset": 0 }
     ]
   }]
 }
