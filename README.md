@@ -17,7 +17,7 @@ Pressing the "Boot" button changes to the WIFI control mode where it displays th
 
 You can flash the latest firmware to your ESP32 directly from your web browser using the following link:
 
-[https://fivef.github.io/Servo-Driver-with-ESP32/](https://fivef.github.io)
+[https://fivef.github.io/Servo-Driver-with-ESP32](https://fivef.github.io/Servo-Driver-with-ESP32)
 
 **Instructions:**
 1. Open the [Flash Firmware](https://fivef.github.io/Servo-Driver-with-ESP32/) link in a compatible web browser (e.g., Chrome, Edge, Opera).
