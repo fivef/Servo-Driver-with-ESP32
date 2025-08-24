@@ -28,3 +28,24 @@ jobs:
         with:
           name: firmware-binaries
           path: .pio/build/esp32dev/
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main'
+        with:
+          tag_name: latest
+          name: Latest Firmware Release
+          draft: false
+          prerelease: false
+          overwrite: true
+          files: |
+            .pio/build/esp32dev/bootloader.bin
+            .pio/build/esp32dev/partitions.bin
+            .pio/build/esp32dev/boot_app0.bin
+            .pio/build/esp32dev/firmware.bin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
