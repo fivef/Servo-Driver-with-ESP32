@@ -3,10 +3,7 @@
   "builds": [{
     "chipFamily": "ESP32",
     "parts": [
-      { "path": "https://github.com/fivef/Servo-Driver-with-ESP32/releases/download/latest/bootloader.bin",       "offset": 4096 },
-      { "path": "https://github.com/fivef/Servo-Driver-with-ESP32/releases/download/latest/partitions.bin",       "offset": 32768 },
-      { "path": "https://github.com/fivef/Servo-Driver-with-ESP32/releases/download/latest/boot_app0.bin",        "offset": 57344 },
-      { "path": "https://github.com/fivef/Servo-Driver-with-ESP32/releases/download/latest/firmware.bin",         "offset": 65536 }
+      { "path": "https://github.com/fivef/Servo-Driver-with-ESP32/releases/download/latest/merged-firmware.bin", "offset": 0 }
     ]
   }]
 }

@@ -23,6 +23,13 @@ jobs:
       - name: Build PlatformIO Project
         run: pio run
 
+      - name: Merge Binaries
+        run: |
+          python -m esptool --chip esp32 merge_bin -o .pio/build/esp32dev/merged-firmware.bin \
+          0x1000 .pio/build/esp32dev/bootloader.bin \
+          0x8000 .pio/build/esp32dev/partitions.bin \
+          0x10000 .pio/build/esp32dev/firmware.bin
+
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -43,9 +50,6 @@ jobs:
           prerelease: false
           overwrite: true
           files: |
-            .pio/build/esp32dev/bootloader.bin
-            .pio/build/esp32dev/partitions.bin
-            .pio/build/esp32dev/boot_app0.bin
-            .pio/build/esp32dev/firmware.bin
+            .pio/build/esp32dev/merged-firmware.bin
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
