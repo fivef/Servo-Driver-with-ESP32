@@ -17,6 +17,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install esptool
+        run: pip install esptool
+
       - name: Install PlatformIO
         run: pip install platformio
 
