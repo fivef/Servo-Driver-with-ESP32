@@ -21,10 +21,10 @@ jobs:
         run: pip install platformio
 
       - name: Build PlatformIO Project
-        run: pio run -d Servo-Driver-with-ESP32
+        run: pio run
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: firmware-binaries
-          path: Servo-Driver-with-ESP32/.pio/build/esp32dev/firmware.bin
+          path: .pio/build/esp32dev/firmware.bin
